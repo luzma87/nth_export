@@ -26,10 +26,6 @@ grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
                       form: 'application/x-www-form-urlencoded',
                       multipartForm: 'multipart/form-data'
                     ]
-
-// URL Mapping Cache Max Size, defaults to 5000
-//grails.urlmapping.cache.maxsize = 1000
-
 // The default codec used to encode data with ${}
 grails.views.default.codec = "none" // none, html, base64
 grails.views.gsp.encoding = "UTF-8"
@@ -48,13 +44,10 @@ grails.logging.jul.usebridge = true
 // packages to include in Spring bean scanning
 grails.spring.bean.packages = []
 
-// request parameters to mask when logging exceptions
-grails.exceptionresolver.params.exclude = ['password']
-
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
-        grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://www.tedein.com.ec"
     }
     development {
         grails.serverURL = "http://localhost:8080/${appName}"
@@ -87,4 +80,21 @@ log4j = {
            'net.sf.ehcache.hibernate'
 
     warn   'org.mortbay.log'
+}
+
+images.location = "web-app/images/"
+
+
+grails {
+    mail {
+        host = "smtp.gmail.com"
+        port = 465
+        username = "tedein.sa.ecuador@gmail.com"
+        password = "tedein2116"
+        props = ["mail.smtp.auth": "true",
+                "mail.smtp.socketFactory.port": "465",
+                "mail.smtp.socketFactory.class": "javax.net.ssl.SSLSocketFactory",
+                "mail.smtp.socketFactory.fallback": "false"]
+
+    }
 }
